@@ -7,6 +7,7 @@ import sys
 from os.path import basename
 from classes.Utils import *
 from classes.Compiler import *
+from formatfile import *
 
 if __name__ == "__main__":
     argv = sys.argv[1:]
@@ -41,5 +42,5 @@ path = input_file[:input_file.find(file_uid)]
 
 input_file_path = "{}{}.gui".format(path, file_uid)
 output_file_path = "{}{}.html".format(path, file_uid)
-
+formatGUI(input_file_path)
 compiler.compile(input_file_path, output_file_path, rendering_function=render_content_with_text)
